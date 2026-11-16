@@ -1,0 +1,76 @@
+.landing {
+  display: grid;
+  grid-template-columns: minmax(0, 1.42fr) minmax(0, 1fr);
+  gap: clamp(1.4rem, 5vw, 5rem);
+  align-items: center;
+  width: min(1080px, calc(100% - 3rem));
+  margin: 3.5rem auto 4rem;
+}
+.landing-intro {
+  border-radius: 1.15rem;
+  overflow: hidden;
+  background: #e7eee2;
+  border: 1px solid #dce7d7;
+}
+.landing-copy {
+  padding: clamp(1.3rem, 4vw, 2.5rem);
+}
+.landing-copy .eyebrow {
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  margin-bottom: 0.65rem;
+}
+.landing-copy h1 {
+  font-size: clamp(2.55rem, 5.5vw, 4.9rem);
+}
+.landing-copy p:last-child {
+  color: var(--muted);
+  max-width: 28rem;
+  margin-top: 0.9rem;
+}
+.landing-photo {
+  width: 100%;
+  height: clamp(180px, 29vw, 315px);
+  object-fit: cover;
+  object-position: 50% 52%;
+}
+.signin-card {
+  padding: clamp(1.25rem, 3.5vw, 2.05rem);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--surface);
+  box-shadow: 0 13px 42px -35px #294f39;
+}
+.signin-card h2 {
+  margin-bottom: 1.35rem;
+}
+.signin-card form {
+  display: grid;
+  gap: 0.86rem;
+}
+.signin-card > .plain-button {
+  margin-top: 0.78rem;
+  text-align: left;
+}
+.demo-action {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+.demo-action .button {
+  width: 100%;
+}
+.demo-action .hint {
+  margin-top: 0.5rem;
+}
+@media (max-width: 760px) {
+  .landing {
+    grid-template-columns: 1fr;
+    width: min(550px, calc(100% - 2rem));
+    margin-top: 1.4rem;
+    margin-bottom: 2rem;
+  }
+}

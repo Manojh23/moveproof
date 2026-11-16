@@ -1,0 +1,40 @@
+.inspection-card {
+  display: grid;
+  gap: 0.52rem;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 0.8rem;
+  background: var(--surface);
+  padding: 1rem;
+}
+.inspection-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.35rem;
+}
+.inspection-card-meta time,
+.inspection-card p {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+.inspection-card h3 {
+  overflow-wrap: anywhere;
+}
+.inspection-card h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.inspection-card h3 a:hover {
+  text-decoration: underline;
+}
+.inspection-card-link {
+  font-size: 0.84rem;
+  font-weight: 750;
+  margin-top: 0.25rem;
+  text-decoration: none;
+}
+.inspection-card-link:hover {
+  text-decoration: underline;
+}

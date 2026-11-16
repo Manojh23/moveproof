@@ -1,0 +1,55 @@
+.inspection-form-page {
+  max-width: 850px;
+}
+.inspection-form {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: clamp(1rem, 3vw, 1.7rem);
+  margin-top: 1rem;
+}
+.form-top,
+.room-fields {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 0.8rem;
+}
+.inspection-form h2 {
+  margin-top: 1.45rem;
+  margin-bottom: 0.4rem;
+}
+.room-editor {
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  display: grid;
+  gap: 0.7rem;
+  margin: 0.9rem 0;
+  padding: 1rem;
+  min-width: 0;
+}
+.room-editor legend {
+  font-size: 0.86rem;
+  font-weight: 750;
+  color: var(--green);
+  padding: 0 0.4rem;
+}
+.room-fields {
+  grid-template-columns: 1.6fr 1fr;
+}
+.room-editor .plain-button {
+  justify-self: start;
+}
+.form-save {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+.inspection-form .error {
+  margin-top: 0.7rem;
+}
+@media (max-width: 600px) {
+  .form-top,
+  .room-fields {
+    grid-template-columns: 1fr;
+  }
+}

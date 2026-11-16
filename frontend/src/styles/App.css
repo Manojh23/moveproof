@@ -1,0 +1,120 @@
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+#main {
+  flex: 1;
+}
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.site-nav,
+.site-footer {
+  width: min(1120px, calc(100% - 3rem));
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.site-nav {
+  min-height: 68px;
+}
+.site-nav nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.7rem, 3vw, 1.65rem);
+  font-size: 0.875rem;
+}
+.site-nav nav a {
+  text-decoration: none;
+  font-weight: 700;
+}
+.site-nav nav a:hover {
+  text-decoration: underline;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  text-decoration: none;
+  font-size: 1.26rem;
+  letter-spacing: -0.045em;
+  font-weight: 850;
+  color: var(--ink);
+}
+.brand-dot {
+  margin-left: -0.38rem;
+  color: #70926a;
+}
+.brand-mark {
+  width: 29px;
+  height: 29px;
+  background: var(--green);
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.brand-mark span {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 12px;
+  border: 1px solid #e6f0df;
+  border-radius: 2px;
+  transform: rotate(-10deg) translate(-2px, -1px);
+}
+.brand-mark span + span {
+  background: var(--green);
+  transform: rotate(12deg) translate(2px, 1px);
+}
+.site-footer {
+  padding: 1.15rem 0 1.4rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.79rem;
+  color: var(--muted);
+}
+.site-footer span:first-child {
+  font-weight: 800;
+}
+.site-error,
+.app-loading {
+  margin: 1.2rem auto;
+  width: min(1120px, calc(100% - 3rem));
+}
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -5rem;
+  padding: 0.6rem;
+  background: var(--surface);
+  z-index: 2;
+}
+.skip-link:focus {
+  top: 0.75rem;
+}
+@media (max-width: 630px) {
+  .site-nav,
+  .site-footer {
+    width: calc(100% - 2rem);
+  }
+  .site-nav {
+    min-height: 58px;
+  }
+  .site-nav nav,
+  .site-nav nav button {
+    font-size: 0.75rem;
+  }
+}
+@media print {
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .site-error {
+    display: none;
+  }
+}
