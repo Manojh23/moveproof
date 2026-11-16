@@ -1,0 +1,7 @@
+.settlement-rows .settlement-editor-row {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.settlement-rows > .hint {
+  margin-bottom: 0.5rem;
+}

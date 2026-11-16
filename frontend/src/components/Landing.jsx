@@ -40,8 +40,8 @@ export default function Landing({ onSignIn }) {
             when you moved.
           </h1>
           <p>
-            Record the condition of each room, then compare move-in and move-out
-            side by side.
+            Compare room conditions between move-in and move-out, and track
+            shared deposit refunds.
           </p>
         </div>
         <img
@@ -117,7 +117,7 @@ export default function Landing({ onSignIn }) {
             Explore the demo <span aria-hidden="true">↗</span>
           </button>
           <p className="hint">
-            Browse sample inspections and try the comparison.
+            Browse sample inspections and deposit settlements.
           </p>
         </div>
       </section>

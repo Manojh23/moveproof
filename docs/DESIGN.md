@@ -61,6 +61,12 @@ The settlement view shows the total deposit, agreed deductions, payments receive
 
 ![Design mockup showing a per-roommate refund breakdown and two installment payments](deposit-tracker-mockup.png)
 
+### Implemented settlement detail
+
+The demo settlement includes a shared deduction, an individual deduction, and partial refund payments. Each roommate’s balance is calculated independently using integer cents.
+
+![Implemented Deposit Tracker showing both roommate balances and the refund history](deposit-tracker.png)
+
 ## Data and responsibilities
 
 | Workflow                         | Full-stack scope                                                                                                        | MongoDB collection   |

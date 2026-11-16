@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { database, ensureIndexes, mongoClient } from "./db/connection.js";
 import authRoutes, { auth } from "./routes/auth.js";
 import inspections from "./routes/inspections.js";
+import settlements from "./routes/settlements.js";
 
 const app = express();
 const production = process.env.NODE_ENV === "production";
@@ -70,6 +71,7 @@ app.use("/api", async (req, res, next) => {
 app.use("/api", auth.initialize(), auth.session());
 app.use("/api/auth", authRoutes);
 app.use("/api/inspections", inspections);
+app.use("/api/settlements", settlements);
 app.use("/api", (_req, res) =>
   res.status(404).json({ error: "Endpoint not found." }),
 );

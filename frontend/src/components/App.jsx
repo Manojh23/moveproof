@@ -13,6 +13,9 @@ import Journal from "./Journal.jsx";
 import InspectionDetail from "./InspectionDetail.jsx";
 import InspectionForm from "./InspectionForm.jsx";
 import Comparison from "./Comparison.jsx";
+import Settlements from "./Settlements.jsx";
+import SettlementDetail from "./SettlementDetail.jsx";
+import SettlementEditor from "./SettlementEditor.jsx";
 import "../styles/App.css";
 
 export default function App() {
@@ -79,6 +82,7 @@ export default function App() {
           {user && (
             <nav aria-label="Main navigation">
               <Link to="/journal">Inspection journal</Link>
+              <Link to="/settlements">Deposit tracker</Link>
               <button type="button" className="plain-button" onClick={signOut}>
                 {user.demo ? "Exit demo" : "Sign out"}
               </button>
@@ -97,6 +101,34 @@ export default function App() {
           {user ? (
             <>
               <Route path="/journal" element={<Journal user={user} />} />
+              <Route
+                path="/settlements"
+                element={<Settlements user={user} />}
+              />
+              <Route
+                path="/settlements/:id"
+                element={<SettlementDetail key={pathname} user={user} />}
+              />
+              <Route
+                path="/settlements/new"
+                element={
+                  user.demo ? (
+                    <Navigate to="/settlements" replace />
+                  ) : (
+                    <SettlementEditor key={pathname} />
+                  )
+                }
+              />
+              <Route
+                path="/settlements/:id/edit"
+                element={
+                  user.demo ? (
+                    <Navigate to="/settlements" replace />
+                  ) : (
+                    <SettlementEditor key={pathname} />
+                  )
+                }
+              />
               <Route
                 path="/journal/new"
                 element={
@@ -125,16 +157,16 @@ export default function App() {
             </>
           ) : (
             <Route
-              path="/journal/*"
+              path="*"
               element={loading ? start : <Navigate to="/" replace />}
             />
           )}
-          <Route path="*" element={<Navigate to="/" replace />} />
+          {user && <Route path="*" element={<Navigate to="/" replace />} />}
         </Routes>
       </main>
       <footer className="site-footer">
         <span>MoveProof</span>
-        <span>Apartment inspection journal</span>
+        <span>Apartment inspections and deposits</span>
       </footer>
     </>
   );
