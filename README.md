@@ -1,7 +1,7 @@
 # MoveProof
 
 **Project team** · Manoj Harridoss and Kavya Korem  
-**Course** · [CS 5610 Web Development, Northeastern University](https://northeastern.instructure.com/courses/261032)  
+**Course** · [CS 5610 Web Development, Northeastern University](https://johnguerra.co/classes/webDevelopment_online_fall_2026/) · [Canvas](https://northeastern.instructure.com/courses/261032)  
 **Assignment** · Project 3  
 **Website** · [MoveProof on Vercel](https://moveproof-chi.vercel.app)
 
@@ -42,7 +42,23 @@ For development, use `npm run dev:api` and `npm run dev` in separate terminals. 
 
 Client-side React uses the Fetch API to call same-origin Express endpoints. The MongoDB Node.js driver handles inspection storage. Passport uses local authentication with bcrypt-hashed passwords and Mongo-backed sessions. Each inspection query is scoped to the signed-in owner. The read-only demo uses separate synthetic records.
 
+### MongoDB collections
+
+| Collection    | Contents                                                                                                                                                                   |
+| ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `inspections` | Manoj’s Inspection Journal supports creating, viewing, editing, and deleting a renter’s records. The seed command adds 1,000 synthetic inspections for the read-only demo. |
+| `users`       | Registered renter accounts and password hashes.                                                                                                                            |
+| `sessions`    | Passport login sessions with an expiration time.                                                                                                                           |
+
 The [design document](docs/DESIGN.md) describes both Project 3 workflows, personas, user stories, and mockups.
+
+## Production deployment
+
+Vercel builds the React frontend from the repository root. The `vercel.json` configuration forwards `/api` requests to the Express function and serves direct links under `/journal` through React Router.
+
+Set `MONGODB_URI` and `SESSION_SECRET` as sensitive environment variables in the Vercel project. `MONGODB_DB` defaults to `moveproof`. The production connection uses a database user scoped to that database in the MoveProof Atlas project. For local setup, use `.env.example` and keep actual credentials in the ignored `.env` file.
+
+After redeploying with the environment variables, check `/api/health` for `{"ok":true}`. Open **Explore the demo** to load the synthetic records into the deployed database. To verify writes, create an account and save an inspection, then reload the page to check that it persists.
 
 ## Assets and license
 
