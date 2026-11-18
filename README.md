@@ -68,6 +68,9 @@ Set `MONGODB_URI` and `SESSION_SECRET` as sensitive environment variables in the
 
 After redeploying with the environment variables, check `/api/health` for `{"ok":true}`. Open **Explore the demo**, then **Deposit tracker**, to load both sets of synthetic records into the deployed database. To verify writes, create an account and save an inspection and a settlement. Reload each page to check that the records persist.
 
+## Video demo
+https://www.youtube.com/watch?v=z_Yhmdo8sqI
+
 ## Assets and license
 
 Source code is covered by the [MIT License](LICENSE). The interface uses a [living-room photo by Max Vakhtbovych](https://www.pexels.com/photo/couch-in-room-8092177/) under the [Pexels license](https://www.pexels.com/license/). The fonts have separate [DM Sans](frontend/public/fonts/OFL-DM-Sans.txt) and [Instrument Serif](frontend/public/fonts/OFL-Instrument-Serif.txt) licenses.
