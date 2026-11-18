@@ -73,3 +73,6 @@ After redeploying with the environment variables, check `/api/health` for `{"ok"
 Source code is covered by the [MIT License](LICENSE). The interface uses a [living-room photo by Max Vakhtbovych](https://www.pexels.com/photo/couch-in-room-8092177/) under the [Pexels license](https://www.pexels.com/license/). The fonts have separate [DM Sans](frontend/public/fonts/OFL-DM-Sans.txt) and [Instrument Serif](frontend/public/fonts/OFL-Instrument-Serif.txt) licenses.
 
 ## AI disclosure
+
+AI assistance was used for research, brainstorming, and project planning. All implementation, testing, and documentation were completed independently by the team.
+
