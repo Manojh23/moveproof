@@ -144,6 +144,22 @@ export function validateSettlement(body) {
     });
   }
 
+    const deductionSummary = settlementSummary({
+    roommates,
+    deductions,
+    payments: [],
+  });
+
+  const overdrawnRoommate = deductionSummary.people.find(
+    (person) => person.deductedCents > person.contributionCents,
+  );
+
+  if (overdrawnRoommate) {
+    return {
+      error: `Deductions allocated to ${overdrawnRoommate.name} exceed their deposit contribution.`,
+    };
+  }
+
   const payments = [];
   for (const entry of body.payments) {
     if (
