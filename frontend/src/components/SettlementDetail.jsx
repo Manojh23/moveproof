@@ -199,6 +199,7 @@ export default function SettlementDetail({ user }) {
                           </time>
                           <p>{entry.note || names.get(entry.roommateId)}</p>
                         </div>
+                        {/* the && with a number can print a 0 here, you could try entry.amountCents != null && (...) */}
                         {entry.amountCents && (
                           <span>{money(entry.amountCents)}</span>
                         )}
