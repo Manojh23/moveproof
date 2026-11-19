@@ -51,6 +51,7 @@ export default function InspectionForm() {
       name,
       condition,
       notes,
+      // check if theres only 3 links and if they're in the valid format, if not then error message would be nice
       links: links
         .split("\n")
         .map((link) => link.trim())
