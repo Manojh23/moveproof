@@ -1,6 +1,9 @@
 import { dateLabel, inspectionType } from "../models.js";
 import "../styles/ComparisonTable.css";
 
+// since the rooms are keyed in lowercase, it might end up losing 2 rooms with the same name in an inspection
+// trimming the names would be better, or maybe an error pop-up if the user enters a duplicate room name
+
 export default function ComparisonTable({ first, second }) {
   const firstRooms = new Map(
     first.rooms.map((room) => [room.name.toLowerCase(), room]),
