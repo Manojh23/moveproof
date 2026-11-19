@@ -14,6 +14,7 @@ export default function Settlements({ user }) {
   useEffect(() => {
     const controller = new AbortController();
     request("/settlements?" + query, { signal: controller.signal })
+      // I like the pattern you used here so that you won't have to keep resetting the loading and error states. Nice!
       .then((data) => setLoaded({ query, data }))
       .catch((error) => {
         if (!controller.signal.aborted)
